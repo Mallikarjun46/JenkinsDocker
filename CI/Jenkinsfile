@@ -5,6 +5,7 @@ pipeline {
             steps {
                 // Checkout code from your GitHub repository
                 git branch: 'main', url: 'git@github.com:Mallikarjun46/JenkinsDocker.git'
+                cd CI
             }
         }
         stage('Build Docker Image') {
