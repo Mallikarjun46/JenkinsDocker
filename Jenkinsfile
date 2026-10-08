@@ -1,1 +1,23 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // Checkout code from your GitHub repository
+                git branch: 'main', url: 'git@github.com:Mallikarjun46/JenkinsDocker.git'
+                cd CI
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image using the Dockerfile in the repository
+                    def app = docker.build("discoverdevops/sample-node-app")
+                }
+            }
+        }
 
+
+      
+    }
+}
