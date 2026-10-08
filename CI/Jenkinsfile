@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout code from your GitHub repository
-                git branch: 'main', url: 'https://github.com/discover-devops/JenkinsDocker.git'
+                git branch: 'main', url: 'git@github.com:Mallikarjun46/JenkinsDocker.git'
             }
         }
         stage('Build Docker Image') {
