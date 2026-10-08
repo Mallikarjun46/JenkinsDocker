@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image using the Dockerfile in the repository
-                    def app = docker.build("discoverdevops/sample-node-app")
+                    docker build -t example1:latest .
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                     sh '''
                     docker stop sample-node-app || true
                     docker rm sample-node-app || true
-                    docker run -d --name sample-node-app -p 3000:3000 discoverdevops/sample-node-app:latest
+                    docker run -d --name sample-node-app -p 3000:3000 example1:latest
                     '''
                 }
             }
