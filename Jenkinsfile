@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image using the Dockerfile in the repository
-                    docker build -t example1:latest .
+                    sh docker build -t example1:latest .
                 }
             }
         }
